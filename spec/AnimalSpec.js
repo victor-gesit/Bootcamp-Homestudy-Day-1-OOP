@@ -1,3 +1,5 @@
+const Animal = require('../app/Animal.js');
+
 (function(){
 	'use strict';
 
@@ -5,7 +7,7 @@
 	describe("Animal Class: Create an animal, make it talk", function(){
 		it("The animal should be of type 'object' and an instance of the animal Class", function(){
 			const cat = new Animal('cat');
-			expect(typeof cat).toEqual(typeof {});
+			expect(typeof cat).toEqual(typeof 22);
 			expect(cat instanceof Animal).toBeTruthy();
 		});
 		
@@ -56,6 +58,10 @@
 		it("A cat is safe to play with", function(){
 			const animal = new Animal('cat');
 			expect(animal.domestic).toEqual(true);
+		});
+		it("A monkey could be funny some times. Don't play with it!", function(){
+			const animal = new Animal('monkey');
+			expect(animal.domestic).toEqual(false);
 		})
 	});
 })();
